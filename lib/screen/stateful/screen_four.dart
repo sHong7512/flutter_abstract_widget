@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:abstract_widget/screen/base_stateful_widget.dart';
+import 'package:abstract_widget/base/base_stateful_widget.dart';
 
 class ScreenFour extends BaseStatefulWidget {
   ScreenFour({super.key, required super.title});

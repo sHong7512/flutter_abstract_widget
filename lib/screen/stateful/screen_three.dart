@@ -1,4 +1,4 @@
-import 'package:abstract_widget/screen/base_stateful_widget.dart';
+import 'package:abstract_widget/base/base_stateful_widget.dart';
 
 class ScreenThree extends BaseStatefulWidget {
   // ScreenThree({super.key});

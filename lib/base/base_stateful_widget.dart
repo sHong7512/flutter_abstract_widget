@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 
-abstract class BaseStatelessWidget extends StatelessWidget {
-  BaseStatelessWidget({
-    Key? key,
+import 'main_layout.dart';
+
+abstract class BaseStatefulWidget extends StatefulWidget {
+  BaseStatefulWidget({
+    super.key,
     this.title,
-  }) : super(key: key);
+  });
 
   String? title;
+
+  @override
+  BaseState createState();
+}
+
+abstract class BaseState<T extends BaseStatefulWidget> extends State<T> {
   final TextStyle _titleTextStyle = TextStyle(
     fontSize: 30,
     color: Colors.yellow[100],
     fontWeight: FontWeight.w700,
   );
+
   final TextStyle ts = TextStyle(
     fontSize: 20,
     color: Colors.blue[900],
@@ -20,11 +29,9 @@ abstract class BaseStatelessWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context, {Widget? body}) {
-    final title = this.title ?? this.runtimeType.toString();
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title, style: _titleTextStyle),
-      ),
+    final title = widget.title ?? this.runtimeType.toString();
+    return MainLayout(
+      title: Text(title, style: _titleTextStyle),
       body: SafeArea(
         child: body ?? Center(child: Text(title)),
       ),

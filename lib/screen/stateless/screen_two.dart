@@ -1,4 +1,4 @@
-import 'package:abstract_widget/screen/base_stateless_widget.dart';
+import 'package:abstract_widget/base/base_stateless_widget.dart';
 import 'package:flutter/material.dart';
 
 class ScreenTwo extends BaseStatelessWidget {
